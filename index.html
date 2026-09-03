@@ -15,6 +15,8 @@
       --success-hover: #35b878;
       --fail: #d1524a;
       --fail-hover: #e0605a;
+      --demo: #3a72d1;
+      --demo-hover: #4a82e0;
       --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
     }
 
@@ -62,7 +64,21 @@
 
     .body { padding: 24px; }
 
-    .action { margin-bottom: 20px; }
+    .group { margin-bottom: 28px; }
+    .group:last-child { margin-bottom: 0; }
+
+    .group-path {
+      display: block;
+      margin-bottom: 12px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text);
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--line);
+    }
+    .group-path span { color: var(--muted); }
+
+    .action { margin-bottom: 16px; }
     .action:last-child { margin-bottom: 0; }
 
     .btn {
@@ -84,6 +100,8 @@
     .btn-success:hover { background: var(--success-hover); }
     .btn-fail { background: var(--fail); }
     .btn-fail:hover { background: var(--fail-hover); }
+    .btn-demo { background: var(--demo); }
+    .btn-demo:hover { background: var(--demo-hover); }
 
     .url {
       margin-top: 8px;
@@ -116,20 +134,56 @@
     </div>
 
     <div class="body">
-      <div class="action">
-        <a class="btn btn-success"
-           href="https://ptest.npe.auspost.com.au/idVerification?status=continue&origin=start">
-          Success
-        </a>
-        <div class="url">status=continue &amp; origin=start</div>
+      <div class="group">
+        <span class="group-path">path: <span>/</span>identity-verification/demo</span>
+
+        <div class="action">
+          <a class="btn btn-demo"
+             href="https://ptest.npe.auspost.com.au/identity-verification/demo?caller=mobile-app&origin=start">
+            DEMO
+          </a>
+          <div class="url">identity-verification/demo · caller=mobile-app &amp; origin=start</div>
+        </div>
       </div>
 
-      <div class="action">
-        <a class="btn btn-fail"
-           href="https://ptest.npe.auspost.com.au/idVerification?status=close&origin=start">
-          Failure
-        </a>
-        <div class="url">status=close &amp; origin=start</div>
+      <div class="group">
+        <span class="group-path">path: <span>/</span>idVerification</span>
+
+        <div class="action">
+          <a class="btn btn-success"
+             href="https://ptest.npe.auspost.com.au/idVerification?status=continue&origin=start">
+            Success
+          </a>
+          <div class="url">idVerification · status=continue &amp; origin=start</div>
+        </div>
+
+        <div class="action">
+          <a class="btn btn-fail"
+             href="https://ptest.npe.auspost.com.au/idVerification?status=close&origin=start">
+            Failure
+          </a>
+          <div class="url">idVerification · status=close &amp; origin=start</div>
+        </div>
+      </div>
+
+      <div class="group">
+        <span class="group-path">path: <span>/</span>identity-verification</span>
+
+        <div class="action">
+          <a class="btn btn-success"
+             href="https://ptest.npe.auspost.com.au/identity-verification?status=continue&origin=start">
+            Success
+          </a>
+          <div class="url">identity-verification · status=continue &amp; origin=start</div>
+        </div>
+
+        <div class="action">
+          <a class="btn btn-fail"
+             href="https://ptest.npe.auspost.com.au/identity-verification?status=close&origin=start">
+            Failure
+          </a>
+          <div class="url">identity-verification · status=close &amp; origin=start</div>
+        </div>
       </div>
     </div>
 
