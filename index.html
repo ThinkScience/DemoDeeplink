@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ID Verification — Deeplink Test Console</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #171a21;
+      --line: #262b35;
+      --text: #e6e9ef;
+      --muted: #8b93a3;
+      --success: #2ea36b;
+      --success-hover: #35b878;
+      --fail: #d1524a;
+      --fail-hover: #e0605a;
+      --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+    }
+
+    .console {
+      width: 100%;
+      max-width: 440px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .head {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .head h1 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .head p {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .body { padding: 24px; }
+
+    .action { margin-bottom: 20px; }
+    .action:last-child { margin-bottom: 0; }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px 18px;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.12s ease;
+    }
+
+    .btn-success { background: var(--success); }
+    .btn-success:hover { background: var(--success-hover); }
+    .btn-fail { background: var(--fail); }
+    .btn-fail:hover { background: var(--fail-hover); }
+
+    .url {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      word-break: break-all;
+      user-select: all;
+    }
+
+    .foot {
+      padding: 14px 24px;
+      border-top: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .foot b { color: var(--text); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main class="console">
+    <div class="head">
+      <h1>ID Verification</h1>
+      <p>Deeplink test console</p>
+    </div>
+
+    <div class="body">
+      <div class="action">
+        <a class="btn btn-success"
+           href="https://ptest.npe.auspost.com.au/idVerification?status=continue&origin=start">
+          Success
+        </a>
+        <div class="url">status=continue &amp; origin=start</div>
+      </div>
+
+      <div class="action">
+        <a class="btn btn-fail"
+           href="https://ptest.npe.auspost.com.au/idVerification?status=close&origin=start">
+          Failure
+        </a>
+        <div class="url">status=close &amp; origin=start</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      env <b>ptest.npe</b> · host <b>auspost.com.au</b>
+    </div>
+  </main>
+</body>
+</html>
